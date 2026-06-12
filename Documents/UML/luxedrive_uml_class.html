@@ -1,0 +1,97 @@
+
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+#uml{padding:16px 0}
+#uml svg{max-width:100%}
+.uml-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);margin-bottom:12px;letter-spacing:.04em;text-transform:uppercase}
+</style>
+<h2 class="sr-only">UML class diagram van LuxeDrive met Car model, User model, CarController, AuthController en hun relaties</h2>
+<div class="uml-title">LuxeDrive — UML Class Diagram</div>
+<div id="uml"></div>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '13px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+    primaryColor: dark ? '#2a2a35' : '#f0eef8',
+    primaryBorderColor: dark ? '#534AB7' : '#7F77DD',
+    primaryTextColor: dark ? '#c2c0b6' : '#3d3d3a',
+    classText: dark ? '#c2c0b6' : '#3d3d3a',
+  },
+});
+
+const diagram = `classDiagram
+  class Car {
+    +int id
+    +string make
+    +string model
+    +int year
+    +int price
+    +string power
+    +string accel
+    +string topspeed
+    +string status
+    +string image
+    +string description
+    +timestamps()
+    +fillable() array
+  }
+
+  class User {
+    +int id
+    +string name
+    +string email
+    +string password
+    +timestamps()
+    +createToken(name) string
+    +tokens() HasMany
+  }
+
+  class CarController {
+    +index(Request) Collection
+    +show(Car) CarResource
+    +store(Request) CarResource
+    +update(Request, Car) CarResource
+    +destroy(Car) Response
+    -validateCar(Request) array
+  }
+
+  class AuthController {
+    +login(Request) Response
+    +logout(Request) Response
+    +me(Request) Response
+  }
+
+  class CarResource {
+    +toArray(Request) array
+  }
+
+  class PersonalAccessToken {
+    +int id
+    +string tokenable_type
+    +int tokenable_id
+    +string name
+    +string token
+    +string abilities
+    +timestamp last_used_at
+  }
+
+  CarController --> Car : gebruikt
+  CarController --> CarResource : geeft terug
+  AuthController --> User : authenticeert
+  User "1" --> "0..*" PersonalAccessToken : heeft tokens
+  CarResource --> Car : transformeert
+`;
+
+const { svg } = await mermaid.render('uml-svg', diagram);
+document.getElementById('uml').innerHTML = svg;
+</script>

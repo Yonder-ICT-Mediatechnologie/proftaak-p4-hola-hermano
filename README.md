@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/qD1kwWh-)
 
 # Proftaak P4 — LuxeDrive
-**Team Hola Hermano** | Marco & Abasin | Yonder ICT Mediatechnologie
+**Team:** Hola Hermano | Marco & Abasin | Yonder ICT Mediatechnologie
 
 Exclusief autoverhuurplatform gebouwd met Next.js, Laravel en MySQL.
 
@@ -13,5 +13,13 @@ https://www.figma.com/design/XBIfNZ2cdHl446EdWB9HUE/Figma-Designs-Proftaak?node-
 
 ## Documentatie
 Zie de [`Documents/`](Documents/) map:
-- [Matrijs V1](Documents/Matrijs-V1.md)
-- [Designs](Documents/Designs/README.md)
+
+| Document | Bestand |
+|---|---|
+| Examenmatrijs | [Documents/Matrijs/ExamenMatrijsProfitaak.pdf](Documents/Matrijs/ExamenMatrijsProfitaak.pdf) |
+| ERD (Mermaid) | [Documents/ERD/ERD.md](Documents/ERD/ERD.md) |
+| ERD (HTML) | [Documents/ERD/luxedrive_erd.html](Documents/ERD/luxedrive_erd.html) |
+| UML | [Documents/UML/luxedrive_uml_class.html](Documents/UML/luxedrive_uml_class.html) |
+| Planning | [Documents/Planning/PlanningSprint.docx](Documents/Planning/PlanningSprint.docx) |
+| Testrapport | [Documents/Testrapport/testrapport.docx](Documents/Testrapport/testrapport.docx) |
+| Figma designs | [Documents/Designs/README.md](Documents/Designs/README.md) |
